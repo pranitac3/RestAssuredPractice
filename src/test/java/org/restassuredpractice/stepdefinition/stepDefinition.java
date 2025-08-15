@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.responseSpecification;
 
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
@@ -84,6 +83,8 @@ public class stepDefinition {
     public void userHitTheEndpointWithSpecificationbuilder() {
         given().spec(specificationBuilder.requestSpecification()).when().get("api/users?page=2").then().spec(specificationBuilder.responseSpecification());
     }
+
+
 }
 
 
